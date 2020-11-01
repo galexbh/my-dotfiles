@@ -83,16 +83,28 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+### Set alias
+
+#############
 alias zshconfig="nano ~/.zshrc"
 alias reload="exec $HOME/.zshrc"
+alias cls="clear"
+alias cd..="cd .."
+alias myip="curl http://ipecho.net/plain; echo"
+#############
 
-# Alias nord vpn 
+#ProtonVPN Aliases
+alias protonc="sudo protonvpn connect"
+alias protond="sudo protonvpn disconnect"
+
+# nordvpn Aliases
 alias vpnon="nordvpn connect"
 alias vpnoff="nordvpn disconnect"
 
-# Alias git 
+# git Aliases 
 
 alias gi="git init"
+alias gc="git clone"
 alias gs="git status -sbu"
 alias ga="git add ."
 alias gcm="git commit -m"
@@ -103,16 +115,46 @@ alias gst="git stash"
 alias gstl="git stash list"
 alias glg='git log --graph --oneline --decorate --all'
 alias ghs="gh pr status"
-alias ghm="gh pr merge"
 alias ghv="gh repo view"
 alias ghbugs="gh bugs"
 
+# vscode Aliases 
+
+alias vscode="code ."
+
+### function
+
+function my_ip() # Get IP adress.
+{
+   curl ifconfig.co
+}
+
+function ff()
+{
+    find . -type f -iname '*'"$*"'*' -ls ;
+}
+
+function sysinfo()   # Get current host related info.
+{
+    echo -e "\n${BRed}System Informations:$NC " ; uname -a
+    echo -e "\n${BRed}Online User:$NC " ; w -hs |
+             cut -d " " -f1 | sort | uniq
+    echo -e "\n${BRed}Date :$NC " ; date
+    echo -e "\n${BRed}Server stats :$NC " ; uptime
+    echo -e "\n${BRed}Memory stats :$NC " ; free
+    echo -e "\n${BRed}Public IP Address :$NC " ; my_ip
+    echo -e "\n${BRed}Open connections :$NC "; netstat -pan --inet;
+    echo -e "\n${BRed}CPU info :$NC "; cat /proc/cpuinfo ;
+    echo -e "\n"
+}
+
 ghelp(){
-    echo alias de git/git cli
-    echo
+    echo Aliases de git/git cli
+    echo  
     echo gi = "git init"
+    echo gc = "git clone"
     echo gs = "git status -sbu"
-    echo ga = "git add ."
+    echo ga = "git add ." 
     echo gcm = "git commit -m"
     echo gp = "git push"
     echo gpl = "git pull"
@@ -121,7 +163,6 @@ ghelp(){
     echo gstl = "git stash list"
     echo glg = 'git log --graph --oneline --decorate --all'
     echo ghs = "gh pr status"
-    echo ghm = "gh pr merge"
     echo ghv = "gh repo view"
     echo ghbugs = "gh bugs"
 }
