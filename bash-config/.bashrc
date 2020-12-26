@@ -115,6 +115,7 @@ alias gst="git stash"
 alias gstl="git stash list"
 alias gsw="git switch"
 alias glg='git log --graph --oneline --decorate --all'
+alias gra='git remote add'
 alias grv="git remote -v"
 
 # system
@@ -150,6 +151,7 @@ githelp(){
     echo gstl = "git stash list"
     echo gsw = "git switch"
     echo glg = 'git log --graph --oneline --decorate --all'
+    echo gra = 'git remote add'
     echo grv = "git remote -v"
 }
 
@@ -171,3 +173,7 @@ function sysinfo()   # Get current host related info.
     echo -e "\n${BRed}CPU info :$NC "; cat /proc/cpuinfo ;
     echo -e "\n"
 }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
