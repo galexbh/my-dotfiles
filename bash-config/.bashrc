@@ -117,6 +117,8 @@ alias gsw="git switch"
 alias glg='git log --graph --oneline --decorate --all'
 alias gra='git remote add'
 alias grv="git remote -v"
+alias grt="git reset"
+alias grth="git reset --hard"
 
 # system
 
@@ -153,6 +155,8 @@ githelp(){
     echo glg = 'git log --graph --oneline --decorate --all'
     echo gra = 'git remote add'
     echo grv = "git remote -v"
+    echo grt = "git reset"
+    echo grth = "git reset --hard"
 }
 
 function my_ip() # Get IP adress.
