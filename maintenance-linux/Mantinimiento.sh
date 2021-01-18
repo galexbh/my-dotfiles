@@ -5,7 +5,7 @@
     # ! Mantenimiento
     # * Realizar un mantenimiento en SO linux Ubuntu
     # @author galexbh@protonmail.com
-    # @version 0.2
+    # @version 0.3
  
  ###
  
@@ -28,12 +28,23 @@
  setterm -background black # setterm [ -background black|red|green|yellow|blue|magenta|cyan|white|default ]
  setterm -foreground green # setterm [ -foreground black|red|green|yellow|blue|magenta|cyan|white|default ]
  
+ echo -e "Detenga todos los programas y servicios que está utilizando desde / tmp / \n"
+ echo -e "Control + C -> Para cancelar \n"
+ 
+ read -n 1 -s -r -p "Presione cualquier tecla para continuar"
+ 
+ # -n define el número de caracteres necesario para dejar de leer
+ 
+ # -s oculta la entrada del usuario
+ 
+ # -r hace que la cadena se interprete "sin procesar" (sin considerar los escapes de barra invertida)
+ 
  if ! [ $(id -u) = 0 ]; then # comprobar si se ejecuta como root
-    echo "Este script debe ser ejecutado como root"
+    echo -e "\n\nEste script debe ser ejecutado como root"
     sleep 3
     clear
  else
-    echo "Este script sera ejecutado como SUPER ROOT"
+    echo -e "\n\nEste script sera ejecutado como SUPER ROOT"
     sleep 3
     clear
  fi
@@ -50,5 +61,9 @@ sudo apt-get check
 sudo rm -f /var/log/*.old /var/log/*.gz /var/log/apt/* /var/log/auth* /var/log/daemon* /var/log/debug* /var/log/dmesg* /var/log/dpkg* /var/log/kern* /var/log/messages* /var/log/syslog* /var/log/user* /var/log/Xorg* /var/crash/* # remover logs
 
 sudo echo "" > ~/.bash_history
+
+cd /tmp/
+echo -e "\nEliminando los ficheros/directorios de /tmp/ \n"
+sudo rm -r * #sudo rm -ri * -> modo interactivo
 
 echo "Finalizado con Exito"
