@@ -5,7 +5,7 @@
     # ! Mantenimiento
     # * Realizar un mantenimiento en SO linux Ubuntu
     # @author galexbh@protonmail.com
-    # @version 0.3
+    # @version 0.4
  
  ###
  
@@ -48,22 +48,24 @@
     sleep 3
     clear
  fi
- 
+
 sudo apt update; sudo update-apt-xapian-index;
 sudo apt install -f;sudo dpkg --configure -a;
-sudo apt --fix-broken install
+sudo apt --fix-broken install;
 
 sudo update-grub; sudo update-grub2;
 sudo apt-get autoremove; sudo apt autoremove; 
-sudo apt purge; sudo apt remove; sudo apt-get autoclean;
+sudo localepurge; sudo apt purge; sudo apt remove; sudo apt-get autoclean;
 sudo apt-get check
+
+echo -e "\nEliminando logs\n"
 
 sudo rm -f /var/log/*.old /var/log/*.gz /var/log/apt/* /var/log/auth* /var/log/daemon* /var/log/debug* /var/log/dmesg* /var/log/dpkg* /var/log/kern* /var/log/messages* /var/log/syslog* /var/log/user* /var/log/Xorg* /var/crash/* # remover logs
 
 sudo echo "" > ~/.bash_history
 
 cd /tmp/
-echo -e "\nEliminando los ficheros/directorios de /tmp/ \n"
+echo -e "\nEliminando los ficheros/directorios de / tmp / \n"
 sudo rm -r * #sudo rm -ri * -> modo interactivo
 
 echo "Finalizado con Exito"
