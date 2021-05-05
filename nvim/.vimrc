@@ -12,5 +12,3 @@ set relativenumber "Donde se encuentre el cursos es un 0 (number*k)"
 set laststatus=2 "En vim que la barra de titulo siempre sea visible"
 set noshowmode "No mostrar --INSERTAR--"
 "set cursorline resaltará la línea actual en cada ventana y actualizará el resaltado a medida que se mueve el cursor."
-
-

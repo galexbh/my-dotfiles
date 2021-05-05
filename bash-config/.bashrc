@@ -119,6 +119,12 @@ alias gra='git remote add'
 alias grv="git remote -v"
 alias grt="git reset"
 alias grth="git reset --hard"
+alias gt="git tag"
+alias gtn="git tag -a"
+alias gts="git show-ref --tags"
+alias gpt="git push origin --tags"
+alias gtd="git tag -d"
+alias gtdh="git push origin :refs/tags/"
 
 # system
 
@@ -126,6 +132,7 @@ alias cls="clear"
 alias cd..="cd .."
 alias bashconfig="nano ~/.bashrc"
 alias reload="source ~/.bashrc"
+alias delete-app="sudo apt-get --purge remove"
 
 # code
 
@@ -139,8 +146,7 @@ alias protond="sudo protonvpn disconnect"
 # Functions
 
 githelp(){
-    echo Aliases de git/git cli
-    echo  
+    echo -e "Aliases de git/git cli \n"
     echo gi = "git init"
     echo gc = "git clone"
     echo gs = "git status -sbu"
@@ -157,6 +163,12 @@ githelp(){
     echo grv = "git remote -v"
     echo grt = "git reset"
     echo grth = "git reset --hard"
+    echo gt="git tag"
+    echo gtn="git tag -a"
+    echo gts="git show-ref --tags"
+    echo gpt="git push origin --tags"
+    echo gtd="git tag -d"
+    echo gtdh="git push origin :refs/tags/"
 }
 
 function my_ip() # Get IP adress.
@@ -178,6 +190,10 @@ function sysinfo()   # Get current host related info.
     echo -e "\n"
 }
 
+# Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# GOlang
+export PATH=$PATH:/usr/local/go/bin
