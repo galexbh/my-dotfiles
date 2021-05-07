@@ -6,7 +6,7 @@ echo Script para actualizar visual studio code .deb
 
 sudo apt-get update
 
-wget https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable -O /tmp/code_latest_AMD64.deb
+wget https://code.visualstudio.com/docs/?dv=linux64_deb -O /tmp/code_latest_AMD64.deb
 
 sudo dpkg -i /tmp/code_latest_AMD64.deb
 

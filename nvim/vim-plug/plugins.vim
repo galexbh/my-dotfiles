@@ -20,15 +20,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'terryma/vim-multiple-cursors'
   
   " Barra de estado - Airline
-	Plug 'vim-airline/vim-airline' " Airline
-	Plug 'vim-airline/vim-airline-themes' " Temas Airline
+  Plug 'vim-airline/vim-airline' " Airline
+  Plug 'vim-airline/vim-airline-themes' " Temas Airline
 
   " Iconos
   Plug 'ryanoasis/vim-devicons'
 
   " Better Syntax Support
   Plug 'sheerun/vim-polyglot'
-	
+
   " File Explorer
   Plug 'scrooloose/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -39,9 +39,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Tmux navigator
   Plug 'christoomey/vim-tmux-navigator'
 
-	" Buscador de Archivos
-	Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-	Plug 'junegunn/fzf.vim'
+  " Buscador de Archivos
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
 
   " AutoCompletado del Codigo
   "Plug 'neoclide/coc.nvim'
