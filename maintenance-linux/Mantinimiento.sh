@@ -17,9 +17,9 @@
  # set -u trate las variables no definidas como un error e inmediatamente salga.
  ###
  
- set -eou pipefail
+ #set -eou pipefail
  
- IFS=$'\n\t' # El shell lo utiliza para determinar cómo dividir palabras
+ #IFS=$'\n\t' # El shell lo utiliza para determinar cómo dividir palabras
  
  setterm --reset # Muestra la cadena de reinicio del terminal, que normalmente restablece el terminal a su estado de encendido.
  

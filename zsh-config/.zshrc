@@ -79,8 +79,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 git
+golang
+alias-finder
 zsh-syntax-highlighting
 zsh-autosuggestions
+sysinfo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -118,39 +121,30 @@ source $ZSH/oh-my-zsh.sh
 
 # system
 
-alias zshconfig="nano ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
+alias vimplug="nvim ~/.config/nvim/vim-plug/plugins.vim"
 alias reload="exec $HOME/.zshrc"
+alias delete-app="sudo apt-get --purge remove"
+alias sysupdate="sudo pkcon refresh && sudo pkcon update"
+alias update="sudo apt-get update"
+alias myip="curl http://ipecho.net/plain; echo"
+
+alias zathup="nohup zathura"
+alias vscode="code ."
 alias cls="clear"
 alias cd..="cd .."
-alias myip="curl http://ipecho.net/plain; echo"
-alias delete-app="sudo apt-get --purge remove"
-alias vscode="code ."
+alias mkfile="touch"
+alias ll="ls -alF"
+alias la="ls -A"
+alias rmf="rm -rf"
+alias calc="bc"
+alias process="ps fax"
+alias disk="df -h"
 
-### function
+### custom plug-in functions
 
-function my_ip() # Get IP adress.
-{
-   curl ifconfig.co
-}
-
-function ff()
-{
-    find . -type f -iname '*'"$*"'*' -ls ;
-}
-
-function sysinfo()   # Get current host related info.
-{
-    echo -e "\n${BRed}System Informations:$NC " ; uname -a
-    echo -e "\n${BRed}Online User:$NC " ; w -hs |
-             cut -d " " -f1 | sort | uniq
-    echo -e "\n${BRed}Date :$NC " ; date
-    echo -e "\n${BRed}Server stats :$NC " ; uptime
-    echo -e "\n${BRed}Memory stats :$NC " ; free
-    echo -e "\n${BRed}Public IP Address :$NC " ; my_ip
-    echo -e "\n${BRed}Open connections :$NC "; netstat -pan --inet;
-    echo -e "\n${BRed}CPU info :$NC "; cat /proc/cpuinfo ;
-    echo -e "\n"
-}
+# git_help
+# sysinfo
 
 ### $PATH
 
@@ -161,3 +155,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # GOlang
 export PATH=$PATH:/usr/local/go/bin
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,51 +1,54 @@
 """ auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
+	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	"autocmd VimEnter * PlugInstall
+	"autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-  "Temas
-  Plug 'ayu-theme/ayu-vim'
-  Plug 'drewtempelmeyer/palenight.vim'  
-  Plug 'tomasr/molokai'
+"Temas
+Plug 'ayu-theme/ayu-vim'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'tomasr/molokai'
 
-  "IDE
-  Plug 'easymotion/vim-easymotion'
-  Plug 'preservim/nerdcommenter'
-  Plug 'Yggdroot/indentLine'
-  Plug 'terryma/vim-multiple-cursors'
-  
-  " Barra de estado - Airline
-  Plug 'vim-airline/vim-airline' " Airline
-  Plug 'vim-airline/vim-airline-themes' " Temas Airline
+"IDE
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdcommenter'
+Plug 'Yggdroot/indentLine'
+Plug 'terryma/vim-multiple-cursors'
 
-  " Iconos
-  Plug 'ryanoasis/vim-devicons'
+" Barra de estado - Airline
+Plug 'vim-airline/vim-airline' " Airline
+Plug 'vim-airline/vim-airline-themes' " Temas Airline
 
-  " Better Syntax Support
-  Plug 'sheerun/vim-polyglot'
+" Iconos
+Plug 'ryanoasis/vim-devicons'
 
-  " File Explorer
-  Plug 'scrooloose/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
+" Better Syntax Support
+Plug 'sheerun/vim-polyglot'
 
-  " Auto pairs for '(' '[' '{'
-  Plug 'jiangmiao/auto-pairs' 
-  
-  " Tmux navigator
-  Plug 'christoomey/vim-tmux-navigator'
+" File Explorer
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-  " Buscador de Archivos
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'junegunn/fzf.vim'
+" Auto pairs for '(' '[' '{'
+Plug 'jiangmiao/auto-pairs'
 
-  " AutoCompletado del Codigo
-  "Plug 'neoclide/coc.nvim'
-  
+" Tmux navigator
+Plug 'christoomey/vim-tmux-navigator'
+
+" Buscador de Archivos
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Auto Formateo
+Plug 'chiel92/vim-autoformat'
+
+" AutoCompletado del Codigo
+"Plug 'neoclide/coc.nvim'
+
 call plug#end()
 
 " Configuracion de Airline
@@ -73,6 +76,9 @@ let g:NERDCompactSexyComs = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+" Auto Formatear al guardar
+au BufWrite * :Autoformat
+
 " Leader
 let mapleader=" "
 
@@ -88,3 +94,4 @@ nmap <leader>f :Files<CR>
 nmap <leader>b :Buffers<CR>
 nmap <leader>i :PlugInstall<CR>
 nmap <leader>cls :PlugClean<CR>
+nmap <leader>ft gg=G<CR>
