@@ -1,9 +1,9 @@
 """ auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	"autocmd VimEnter * PlugInstall
-	"autocmd VimEnter * PlugInstall | source $MYVIMRC
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  "autocmd VimEnter * PlugInstall
+  "autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
@@ -47,7 +47,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'chiel92/vim-autoformat'
 
 " AutoCompletado del Codigo
-"Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -58,7 +58,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'murmur'
 
 "IA Autocompletado
-set rtp+=/home/galexbh/Documentos/Github/tabnine-vim
+"set rtp+=/home/galexbh/Documentos/Github/tabnine-vim
 
 " config theme
 set t_Co=256
