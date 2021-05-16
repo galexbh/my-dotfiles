@@ -1,9 +1,9 @@
 """ auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
+	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	"autocmd VimEnter * PlugInstall
+	"autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
@@ -92,6 +92,7 @@ nmap <Leader>q :q<CR>
 
 nmap <leader>f :Files<CR>
 nmap <leader>b :Buffers<CR>
+nmap <leader>l :bd<CR>
 nmap <leader>i :PlugInstall<CR>
 nmap <leader>cls :PlugClean<CR>
 nmap <leader>ft gg=G<CR>
