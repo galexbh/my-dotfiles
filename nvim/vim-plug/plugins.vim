@@ -49,6 +49,12 @@ Plug 'chiel92/vim-autoformat'
 " AutoCompletado del Codigo
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" JSDOC
+Plug 'heavenshell/vim-jsdoc', {
+			\ 'for': ['javascript', 'javascript.jsx','typescript'],
+			\ 'do': 'make install'
+			\}
+
 call plug#end()
 
 " Configuracion de Airline
@@ -84,15 +90,16 @@ let mapleader=" "
 
 """ Maps """
 
-nmap <Leader>s <Plug>(easymotion-s2)
-nmap <Leader>nt :NERDTreeFind<CR>
+nmap <silent><Leader>s <Plug>(easymotion-s2)
+nmap <silent><Leader>nt :NERDTreeFind<CR>
 
-nmap <Leader>w :w<CR>
-nmap <Leader>q :q<CR>
+nmap <silent><Leader>w :w<CR>
+nmap <silent><Leader>q :q<CR>
 
-nmap <leader>f :Files<CR>
-nmap <leader>b :Buffers<CR>
-nmap <leader>l :bd<CR>
+nmap <silent><leader>f :Files<CR>
+nmap <silent><leader>b :Buffers<CR>
+nmap <silent><leader>l :bd<CR>
 nmap <leader>i :PlugInstall<CR>
 nmap <leader>cls :PlugClean<CR>
-nmap <leader>ft gg=G<CR>
+nmap <silent><F2> :JsDoc<CR>
+nmap <silent><leader>ft gg=G<CR>
