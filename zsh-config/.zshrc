@@ -78,12 +78,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-git
-golang
-alias-finder
-zsh-syntax-highlighting
-zsh-autosuggestions
-sysinfo
+  git
+  golang
+  alias-finder
+  zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -124,6 +123,8 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="nvim ~/.zshrc"
 alias vimplug="nvim ~/.config/nvim/vim-plug/plugins.vim"
 alias reload="exec $HOME/.zshrc"
+alias dlg="dpkg -l | grep"
+alias donde="which"
 alias delete-app="sudo apt-get --purge remove"
 alias sysupdate="sudo pkcon refresh && sudo pkcon update"
 alias update="sudo apt-get update"
@@ -140,6 +141,7 @@ alias rmf="rm -rf"
 alias calc="bc"
 alias process="ps fax"
 alias disk="df -h"
+alias lzd='lazydocker'
 
 ### custom plug-in functions
 
@@ -153,9 +155,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Alda-lang
+export PATH="/home/galexbh/Documentos/Github/Alda:$PATH"
+
 # GOlang
 export PATH=$PATH:/usr/local/go/bin
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# .Net Core
+export DOTNET_ROOT=/snap/dotnet-sdk/current
+export PATH="$PATH:$HOME/.dotnet/tools"
+
+# SQLserver
+export PATH="$PATH:/opt/mssql-tools/bin"
