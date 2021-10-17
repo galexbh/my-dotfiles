@@ -132,11 +132,14 @@ alias cd..="cd .."
 alias mkfile="touch"
 alias ll="ls -alF"
 alias la="ls -A"
-alias rmf="rm -rf"
 alias calc="bc"
 alias process="ps fax"
 alias disk="df -h"
 alias lzd='lazydocker'
+alias start_sqlserver="systemctl start mssql-server"
+alias stop_sqlserver="systemctl stop mssql-server"
+alias restart_sqlserver="systemctl restart mssql-server"
+alias status_sqlserver="systemctl status mssql-server"
 
 # ======
 #  PATH
