@@ -1,5 +1,7 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
+
+""Vim rc
 source $HOME/.config/nvim/.vimrc
 
 ""Vim Plug

@@ -102,15 +102,12 @@ let g:NERDTrimTrailingWhitespace = 1
 " Auto Formatear al guardar
 au BufWrite * :Autoformat
 
-"Configuration for async update
-set updatetime=300
-
 " Leader
 let mapleader=" "
 
-""" Maps """
+""" Maps
 
-nmap s <Plug>(easymotion-overwin-f2)
+nmap <silent><Leader>s <Plug>(easymotion-overwin-f2)
 nmap <silent><Leader>nt :NERDTreeFind<CR>
 
 nmap <silent><Leader>bn :bn<CR>
