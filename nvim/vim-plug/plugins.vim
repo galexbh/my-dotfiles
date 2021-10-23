@@ -1,9 +1,9 @@
 """ auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	"autocmd VimEnter * PlugInstall
-	"autocmd VimEnter * PlugInstall | source $MYVIMRC
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    "autocmd VimEnter * PlugInstall
+    "autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
@@ -18,6 +18,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'mhinz/vim-signify'
 
 " Barra de estado - Airline
 Plug 'vim-airline/vim-airline' " Airline
@@ -42,6 +43,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " Buscador de Archivos
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
 
 " Auto Formateo
 Plug 'chiel92/vim-autoformat'
@@ -51,13 +53,12 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " JSDOC
 Plug 'heavenshell/vim-jsdoc', {
-			\ 'for': ['javascript', 'javascript.jsx','typescript'],
-			\ 'do': 'make install'
-			\}
+            \ 'for': ['javascript', 'javascript.jsx','typescript'],
+            \ 'do': 'make install'
+            \}
 
 " Golang
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 call plug#end()
 
 " Configuracion de Airline
@@ -66,8 +67,21 @@ let g:airline#extensions#tablines#fnamemod = ':t' " Mostrar nombre del archivo
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'murmur'
 
-"IA Autocompletado
-"set rtp+=/home/galexbh/Documentos/Github/tabnine-vim
+" Config IndenLine
+"let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_indentLevel = 10
+let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal', 'coc-explorer', 'diff', 'vimwiki']
+let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*', 'help']
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+" Conceal Settings
+let g:indentLine_setConceal = 1
+let g:indentLine_concealcursor = 'incv'
+let g:indentLine_conceallevel = 2
+
+" Leading Space
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = "."
 
 " config theme
 set t_Co=256
@@ -88,21 +102,23 @@ let g:NERDTrimTrailingWhitespace = 1
 " Auto Formatear al guardar
 au BufWrite * :Autoformat
 
+"Configuration for async update
+set updatetime=300
+
 " Leader
 let mapleader=" "
 
 """ Maps """
 
-nmap <silent><Leader>s <Plug>(easymotion-s2)
+nmap s <Plug>(easymotion-overwin-f2)
 nmap <silent><Leader>nt :NERDTreeFind<CR>
 
 nmap <silent><Leader>bn :bn<CR>
 nmap <silent><Leader>bp :bp<CR>
-nmap <silent><leader>l :bd<CR>
-
+nmap <silent><Leader><C-l> :bd<CR>
 nmap <silent><Leader>w :w<CR>
 nmap <silent><Leader>q :q<CR>
-nmap <silent><leader>f :Files<CR>
+nmap <silent><leader><C-f> :Files<CR>
 nmap <silent><leader>b :Buffers<CR>
 
 nmap <leader>i :PlugInstall<CR>
