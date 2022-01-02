@@ -19,6 +19,7 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 
+alias v="nvim"
 alias zshconfig="nvim ~/.zshrc"
 alias startconfig="nvim ~/.config/starship.toml"
 alias install="sudo pacman -S"
@@ -46,10 +47,6 @@ alias lzd="lazydocker"
 alias lzg="lazygit"
 alias mobile="scrcpy"
 
-# lua language
-
-alias luamake=/home/galexbh/.config/nvim/ls/lua-language-server/3rd/luamake/luamake
-
 # FzF + ripgrep
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
 
@@ -65,5 +62,11 @@ source /usr/share/nvm/install-nvm-exec
 export GOBIN=$HOME/go/bin
 export PATH=$PATH:$GOPATH:$GOBIN
 export GO111MODULE=on
+
+# Python Bin
+export PATH="$HOME/.local/bin:$PATH"
+
+# Cargo Bin
+export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(starship init zsh)"
