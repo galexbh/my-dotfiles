@@ -12,13 +12,8 @@ M.setup = function()
          },
          formatting.autopep8.with { filetypes = { "python" } },
          formatting.gofmt.with { filetypes = { "go" } },
-         -- formatting.shfmt,
          formatting.clang_format,
-         -- formatting.cmake_format,
-         -- formatting.dart_format,
          formatting.stylua.with { filetypes = { "lua" } },
-         -- formatting.isort,
-         -- formatting.codespell.with({filetypes = {'markdown'}})
       },
       on_attach = function(client)
          if client.resolved_capabilities.document_formatting then
