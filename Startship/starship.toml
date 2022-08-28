@@ -2,197 +2,58 @@ add_newline = true
 
 format = "$all"
 
-[line_break]
-disabled = false
-
 [username]
-#style_user = "bold red"
-#style_root = "bold yellow"
-#format = "user: [$user]($style) "
 disabled = false
 show_always = true
+style_user = "bold yellow"
+format = "[$user[@](bold blue)]($style)"
 
 [hostname]
-trim_at = "."
-ssh_only = false
 disabled = false
-format =  "[$hostname](bold blue) "
-
-[time]
-disabled = true
-format = '🕙[\[ $time \]]($style) '
-time_format = "%T"
-utc_time_offset = "local"
-time_range = "10:00:00-14:00:00"
-
-
-[character]
-# symbol = "➜"
-success_symbol = "[❯](bold green)"
-error_symbol = "✗"
-
-
-[cmd_duration]
-min_time = 500
-format = "took [$duration]($style) "
+ssh_only = false
+style = "bold white"
+format =  "[$hostname]($style) "
 
 [directory]
-truncation_length = 6
-truncate_to_repo = true
-style = "bold cyan"
 disabled = false
-format = "in [$path]($style)[$read_only]($read_only_style) "
+truncation_length = 1
+home_symbol = "~"
+format = "[in](bold purple) [$path](bold cyan)[/](bold green) "
 
-#[env_var]
-#variable = "SHELL"
-#default = "unknown shell"
-#format = "with [$env_value]($style) "
-
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[](bold red)"
 
 [git_branch]
-symbol = "🌱 " # 
-truncation_length = 8
-truncation_symbol = "..."
-style = "bold purple"
-format = "on [$symbol$branch]($style) "
+symbol = " "
+style = "bold blue"
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
 
 [git_state]
-cherry_pick = "[🍒 PICKING](bold red)"
-rebase = "[⛓ REBASING](bold gray)"
-merge = "[⚗ MERGING](bold purple)"
-revert = "[🧙🏽‍ REVERTING](bold pink)"
-bisect = "[🥩 BISECTING](bold bright-red)"
-am = "AM"
-am_or_rebase = "AM/REBASE"
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+[git_metrics]
+added_style = "bold blue"
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
+conflicted = "= "
+ahead = "⇡ ${count} "
+behind = "⇣ ${count} "
+diverged = "⇕ "
+up_to_date = ""
+untracked = "? "
+stashed = "$ "
+modified = "! "
+staged = '[++\($count\)](green)'
+renamed = "» "
+deleted = " "
+
+[cmd_duration]
 disabled = true
-#conflicted = "🤬"
-#ahead = "🏎💨"
-#behind = "😰"
-#diverged = "😵"
-#up_to_date = "✓"
-#untracked = "🤷‍"
-#stashed = "📦"
-#modified = "📝"
-#staged = '[++\($count\)](green)'
-#renamed = "👅"
-#deleted = "🗑"
-
-#[git_status]
-#ahead = "⇡${count}"
-#diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-#behind = "⇣${count}"
-
-# [jobs]
-# symbol = "✦ "
-# threshold = 1
-
-#[memory_usage]
-#disabled = false
-#show_percentage = true
-#threshold = -1
-#symbol = " "
-#style = "bold dimmed white"
-#format = "ram: $symbol [${ram}]($style) "
-
-[aws]
-symbol = "🅰 "
-style = "bold yellow"
-format = 'on [$symbol($profile )(\($region\) )]($style)'
-
-#[aws.region_aliases]
-#ap-southeast-2 = "au"
-#us-east-1 = "va"
-
-[crystal]
-format = "via [🔮 $version](bold black) "
-
-[dart]
-format = "via [🔰 $version](bold blue) "
-
-[deno]
-format = "via [🦕 $version](green bold) "
-
-[nodejs]
-format = "via [⬢ $version](bold green) "
-
-[package]
-format = "via [📦 $version](208 bold) "
-
-[docker_context]
-format = "via [🐋 $context](blue bold)"
-
-[dotnet]
-format = "via [💠 ($tfm)](bold bright-blue)"
-
-[elixir]
-format = 'via [💧 ($version \(OTP $otp_version\) )](bold bright-purple)'
-
-[elm]
-format = "via [ $version](cyan bold) "
-
-[erlang]
-format = "via [ e $version](bold red) "
-
-[golang]
-format = "via [🐹 $version](bold cyan) "
-
-[java]
-format = "via [☕ (${version} )](bold orange)"
-
-[julia]
-symbol = "∴ "
-format = "via [$symbol($version )](bold pink)"
-
-[kotlin]
-symbol = "🅺 "
-kotlin_binary = "kotlinc"
-format = "via [$symbol($version )](bold bright-orange"
-
-[helm]
-format = "via [⎈ $version](bold white) "
-
-[python]
-symbol = "🐍 "
-style = "bold green"
-pyenv_prefix = "pyenv"
-pyenv_version_name = false
-disabled = false
-format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-
-[lua]
-format = "via [🌕 $version](bold blue) "
-
-[nim]
-style = "yellow"
-symbol = "👑 "
-format = "via [$symbol($version )]($style)"
-
-[nix_shell]
-disabled = true
-impure_msg = "[impure shell](bold red)"
-pure_msg = "[pure shell](bold green)"
-format = 'via [☃️ $state( \($name\))](bold blue) '
-
-[ocaml]
-format = "via [🐪 $version]($bold Brown) "
-
-[vagrant]
-format = "via [⍱ $version](bold white) "
-
-[rust]
-format = "via [🦀 $version](red bold)"
-
-[ruby]
-format = "via [💎 ($version )](bold bright-red)"
-
-[php]
-format = "via [🐘 $version](147 bold) "
-
-[perl]
-format = "via [🦪 $version](200 bold) "
-
-[gcloud]
-format = 'on [$symbol$account(@$domain)(\($project\))]($style) '
