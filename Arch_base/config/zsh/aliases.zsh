@@ -41,3 +41,11 @@ alias gsts='git stash show --text'
 alias ggpull='git pull origin "$(git_current_branch)"'
 alias ggpush='git push origin "$(git_current_branch)"'
 alias gloga='git log --oneline --decorate --graph --all'
+
+##
+## Functions
+##
+
+mpv(){
+    nohup mpv $1 > /dev/null 2>&1&
+}
