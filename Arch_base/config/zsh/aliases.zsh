@@ -18,6 +18,7 @@ alias ll='exa -la --color=always --icons --group-directories-first'
 alias la='exa -la --git --icons --no-permissions --no-user --no-time --no-filesize'
 alias tree='exa -a --color=always --icons --group-directories-first -T'
 alias cat='bat --color always --plain'
+alias path='echo $PATH | sed "s/:/\n/g" | sort | uniq -c'
 alias mobile="scrcpy"
 
 ##
