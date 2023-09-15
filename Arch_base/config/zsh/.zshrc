@@ -8,4 +8,5 @@ options
 bindkeys
 plugins
 prompt
+ssh
 EOF

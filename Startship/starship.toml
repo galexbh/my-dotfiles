@@ -30,11 +30,11 @@ style = "bold blue"
 
 [git_commit]
 commit_hash_length = 4
-tag_symbol = "🔖 "
+tag_symbol = " "
 
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
-cherry_pick = "[🍒 PICKING](bold red)"
+cherry_pick = "[󱇯 PICKING](bold red)"
 
 [git_metrics]
 added_style = "bold blue"
@@ -47,7 +47,7 @@ conflicted = "= "
 ahead = "⇡ ${count} "
 behind = "⇣ ${count} "
 diverged = "⇕ "
-up_to_date = ""
+up_to_date = "󰄬"
 untracked = "? "
 stashed = "$ "
 modified = "! "

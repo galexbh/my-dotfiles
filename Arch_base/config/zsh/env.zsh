@@ -6,6 +6,9 @@
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# Bun
+export PATH="$HOME/.bun/bin:$PATH"
+
 # Cargo
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -19,6 +22,11 @@ export GO111MODULE=on
 
 # Flutter
 export PATH="$PATH:$HOME/flutter/bin"
+
+# pip
+export PATH=$PATH:/usr/local/bin
+
+export PATH=$PATH:/usr/bin/rootlesskit
 
 # prevents duplicates PATH
 typeset -U PATH
